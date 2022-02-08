@@ -46,7 +46,6 @@
   ],
   "datoCmsPlugin": {
     "title": "Matomo",
-    "coverImage": "docs/cover.png",
     "entryPoint": "build/index.html",
     "permissions": []
   }

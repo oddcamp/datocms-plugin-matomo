@@ -26,19 +26,24 @@ Then click on Save plugin settings
 
 After installing the plugin, in the new settings form we must enter the parameters for our Matomo project.
 
+- **Matomo Host:** The name of our host in matomo,  
+  ex: mysite
+
 - **Matomo Site:** The name of our site in matomo,  
-  ex: mysite.com
+  ex: www.mysite.com
+
+- **Matomo Site ID:** The id of our site in matomo,  
+  ex: 1
 
 Then for each model, we'll have the following fields:
 
 - **[DATOCMS MODEL] URL Pattern:** The pattern used to construct the Matomo URL for the specified model,  
-  ex: ?page=%2f
+  ex: index.php?module=CoreHome&action=index&idSite=1&period=day&date=yesterday#?idSite=1&period=year&date=2022-02-07&segment=&category=General_Actions&subcategory=General_Pages&popover=RowAction$3ATransitions$3Aurl$3Ahttps$3A$2F$2F
 
 - **[DATOCMS MODEL] Slug Field:** The field of the specified model that will be used as slug,  
   ex: First Name
 
-The combination of the 3 parameters will be later used by the plugin to create a link, ex:  
-https://matomo.io/mysite.com?page=%2fjoakim
+The combination of the 5 parameters will be later used by the plugin to create a link.
 
 ![Plugin Parameters](./docs/plugin-settings-02.png)
 
