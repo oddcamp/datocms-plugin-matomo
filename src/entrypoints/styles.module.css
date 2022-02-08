@@ -1,0 +1,27 @@
+.settings-section {
+  font-weight: bold;
+}
+
+.matomo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: colfax-web, Roboto, Helvetica Neue, Helvetica, Roboto, Arial,
+    sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #34363a;
+  text-rendering: optimizeLegibility;
+}
+
+.matomo-link:hover {
+  text-decoration: underline;
+}
+
+.matomo-logo {
+  margin-right: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+}
