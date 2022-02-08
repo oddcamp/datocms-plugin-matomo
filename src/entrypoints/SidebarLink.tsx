@@ -7,12 +7,26 @@ type PropTypes = {
 };
 
 export default function SidebarLink({ ctx }: PropTypes) {
-  const modelMatomoSite = ctx.plugin.attributes.parameters[`matomo-site`];
+  const date = new Date();
+  date.setDate(date.getDate() - 1);
 
-  const modelMatomoUrlPattern =
-    ctx.plugin.attributes.parameters[
+  const modelMatomoHost = ctx.plugin.attributes.parameters[`matomo-host`];
+  const modelMatomoSite = ctx.plugin.attributes.parameters[`matomo-site`];
+  const modelMatomoSiteId = ctx.plugin.attributes.parameters[`matomo-siteId`];
+
+  const modelMatomoUrlPattern = (
+    (ctx.plugin.attributes.parameters[
       `${ctx.itemType.attributes.name}-urlPattern`
-    ];
+    ] as string) || ``
+  )
+    .replace(/(idSite=(.*?))&/g, `idSite=${modelMatomoSiteId}&`)
+    .replace(
+      /(date=(.{10}?))&/g,
+      `date=${date.getFullYear()}-${String(date.getMonth()).padStart(
+        2,
+        `0`
+      )}-${String(date.getDate()).padStart(2, `0`)}&`
+    );
 
   const modelMatomoSlugField: any =
     ctx.plugin.attributes.parameters[
@@ -27,11 +41,15 @@ export default function SidebarLink({ ctx }: PropTypes) {
 
   return (
     <Canvas ctx={ctx}>
-      {modelMatomoSite && modelMatomoUrlPattern && modelMatomoSlug ? (
+      {modelMatomoHost &&
+      modelMatomoSite &&
+      modelMatomoSiteId &&
+      modelMatomoUrlPattern &&
+      modelMatomoSlug ? (
         <a
-          className={styles["Matomo-link"]}
+          className={styles["matomo-link"]}
           target="_blank"
-          href={`https://matomo.io/${modelMatomoSite}${modelMatomoUrlPattern}${modelMatomoSlug
+          href={`https://${modelMatomoHost}.matomo.cloud/${modelMatomoUrlPattern}${modelMatomoSite}$2F${modelMatomoSlug
             .toLowerCase()
             .replaceAll(` `, `_`)}`}
           rel="noreferrer"

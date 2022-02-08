@@ -85,11 +85,27 @@ export default function ConfigScreen({ ctx }: Props) {
       <Form onSubmit={saveConfig}>
         <FieldGroup>
           <TextField
+            name={`matomo-host`}
+            id={`matomo-host`}
+            label={`Matomo host`}
+            value={(pluginConfig[`matomo-host`] as string) || ""}
+            placeholder="ex: oddcamp"
+            onChange={updateConfigField}
+          />
+          <TextField
             name={`matomo-site`}
             id={`matomo-site`}
-            label={`matomo Site`}
+            label={`Matomo Site`}
             value={(pluginConfig[`matomo-site`] as string) || ""}
-            placeholder="ex: oddcamp.com"
+            placeholder="ex: www.oddcamp.com"
+            onChange={updateConfigField}
+          />
+          <TextField
+            name={`matomo-siteId`}
+            id={`matomo-siteId`}
+            label={`Matomo Site ID`}
+            value={(pluginConfig[`matomo-siteId`] as string) || ""}
+            placeholder="ex: 1"
             onChange={updateConfigField}
           />
           <p className={styles["settings-section"]}>URL patterns per model:</p>
