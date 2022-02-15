@@ -1,6 +1,6 @@
 # Matomo DatoCMS Plugin
 
-Datocms plugin that provides a link to Matomo for the current record on the sidebar
+Datocms plugin that provides a link to [Matomo](https://matomo.org/) for the current record on the sidebar
 
 ## Setup
 
