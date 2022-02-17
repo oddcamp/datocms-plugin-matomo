@@ -1,6 +1,6 @@
 {
   "name": "datocms-plugin-matomo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Matomo integration for DatoCMS",
   "author": "Odd Camp",
